@@ -1,0 +1,26 @@
+# Create a .txt version of the Python script including the figure legend
+
+figure_legend = """\
+Figure Legend:
+--------------
+Figure X. Annotated method comparison scatter plot of Ct values obtained from the Advanced Assay and the 
+TaqMan Small RNA Assay (classic). Each point represents the Ct measurement for a given microRNA target 
+(miR16, miR21, miR195, or miR425) in a specific sample. Points are color-coded by target, and the 
+corresponding sample IDs are annotated next to each point. The dashed diagonal line represents the line of 
+identity (y = x), indicating perfect agreement between the two assays. Points below the line indicate lower 
+Ct values in the TaqMan assay, while points above the line indicate lower Ct values in the Advanced Assay.
+"""
+
+txt_path = "/mnt/data/assay_comparison_plots.txt"
+with open(txt_path, "w", encoding="utf-8") as f:
+    f.write("# Assay Comparison Plots Script\n")
+    f.write("# --------------------------------------------\n")
+    f.write("# This script generates:\n")
+    f.write("# 1) Labeled method-comparison scatter plot with identity line\n")
+    f.write("# 2) Grouped bar chart of mean Ct per target (± SD)\n")
+    f.write("# 3) Per-sample grouped bar charts (one PNG per sample)\n\n")
+    f.write(figure_legend)
+    f.write("\n\n")
+    f.write(script)
+
+txt_path
